@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "instaClone2",
-    "slug": "instaClone2",
+    "name": "instaClone",
+    "slug": "instaClone",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -22,6 +22,17 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "b7447036-2c97-43cf-a159-0fe8301241a0"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/b7447036-2c97-43cf-a159-0fe8301241a0"
     }
   }
 }
