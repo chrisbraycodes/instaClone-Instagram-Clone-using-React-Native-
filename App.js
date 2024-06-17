@@ -8,13 +8,7 @@ import LandingScreen from './Components/Auth/Landing';
 import RegisterScreen from './Components/Auth/Register';
 
 const firebaseConfig = {
-  apiKey: ""
-  authDomain: "",
-  projectId: "",
-  storageBucket: "",
-  messagingSenderId: "",
-  appId: "",
-  measurementId: ""
+  *secret*
 };
 
 // Initialize Firebase
@@ -22,6 +16,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 const Stack = createStackNavigator();
+
 
 export default function App() {
   return (

@@ -12,7 +12,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-export class Register extends Component {
+export class Login extends Component {
   constructor(props) {
     super(props);
 
@@ -22,18 +22,18 @@ export class Register extends Component {
       name: ''
     };
 
-    this.onSignup = this.onSignup.bind(this);
+    this.onlogin = this.onlogin.bind(this);
   }
 
   onSignup() {
-    const { email, password, name } = this.state;
-    createUserWithEmailAndPassword(auth, email, password)
+    const { email, password } = this.state;
+    createUserWithEmailAndPassword(email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        console.log('User registered:', user);
+        console.log(result);
       })
       .catch((error) => {
-        console.error('Error registering user:', error);
+        console.error(error);
       });
   }
 
@@ -55,7 +55,7 @@ export class Register extends Component {
         />
         <Button
           onPress={this.onSignup}
-          title="Sign Up"
+          title="Sign in"
         />
       </View>
     );
