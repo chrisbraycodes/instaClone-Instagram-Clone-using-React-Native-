@@ -5,7 +5,11 @@ import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 
 // Your Firebase configuration
 const firebaseConfig = {
+<<<<<<< Updated upstream
   *secret*
+=======
+  
+>>>>>>> Stashed changes
 };
 
 // Initialize Firebase
