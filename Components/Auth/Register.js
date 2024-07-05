@@ -1,20 +1,24 @@
 import React, { Component } from 'react';
-import { View, Button, TextInput } from 'react-native';
+import { View, Button, TextInput, Alert } from 'react-native';
 import { initializeApp } from 'firebase/app';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { getFirestore, collection, doc, setDoc } from 'firebase/firestore';
 
 // Your Firebase configuration
 const firebaseConfig = {
-<<<<<<< Updated upstream
-  *secret*
-=======
-  
->>>>>>> Stashed changes
+  apiKey: "AIzaSyDaGRVDsDtFfpOMWjsaN8FHfyq5zPinfcg",
+  authDomain: "instaclone-c9dad.firebaseapp.com",
+  projectId: "instaclone-c9dad",
+  storageBucket: "instaclone-c9dad.appspot.com",
+  messagingSenderId: "199402134756",
+  appId: "1:199402134756:web:26f243025ab738245820f1",
+  measurementId: "G-4E2DFRC3QQ"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const firestore = getFirestore(app); // Initialize Firestore
 
 export class Register extends Component {
   constructor(props) {
@@ -34,10 +38,21 @@ export class Register extends Component {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        console.log('User registered:', user);
+        // Store additional user data in Firestore
+        return setDoc(doc(firestore, "users", auth.currentUser.uid), {
+          name,
+          email
+        });
+      })
+      .then(() => {
+        console.log('User registered successfully:', auth.currentUser.uid);
+        Alert.alert('Registration Successful', 'User registered successfully!');
+        // Optionally, navigate to another screen or perform other actions
       })
       .catch((error) => {
         console.error('Error registering user:', error);
+        Alert.alert('Registration Failed', error.message);
+        // Handle errors, update state, etc.
       });
   }
 

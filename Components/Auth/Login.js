@@ -5,11 +5,13 @@ import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 
 // Your Firebase configuration
 const firebaseConfig = {
-<<<<<<< Updated upstream
-  *secret*
-=======
-  
->>>>>>> Stashed changes
+  apiKey: "AIzaSyDaGRVDsDtFfpOMWjsaN8FHfyq5zPinfcg",
+  authDomain: "instaclone-c9dad.firebaseapp.com",
+  projectId: "instaclone-c9dad",
+  storageBucket: "instaclone-c9dad.appspot.com",
+  messagingSenderId: "199402134756",
+  appId: "1:199402134756:web:26f243025ab738245820f1",
+  measurementId: "G-4E2DFRC3QQ"
 };
 
 // Initialize Firebase
@@ -23,24 +25,14 @@ export class Login extends Component {
     this.state = {
       email: '',
       password: '',
-<<<<<<< Updated upstream
-      name: ''
-=======
->>>>>>> Stashed changes
     };
 
     this.onlogin = this.onlogin.bind(this);
   }
 
-<<<<<<< Updated upstream
-  onSignup() {
-    const { email, password } = this.state;
-    createUserWithEmailAndPassword(email, password)
-=======
   onSignUp() {
     const { email, password } = this.state;
     firebase.auth().signInWIthEmailAndPassword(email, password)
->>>>>>> Stashed changes
       .then((userCredential) => {
         const user = userCredential.user;
         console.log(result);
@@ -67,11 +59,7 @@ export class Login extends Component {
           onChangeText={(password) => this.setState({ password })}
         />
         <Button
-<<<<<<< Updated upstream
-          onPress={this.onSignup}
-=======
           onPress={this.onSignUp}
->>>>>>> Stashed changes
           title="Sign in"
         />
       </View>
@@ -79,8 +67,4 @@ export class Login extends Component {
   }
 }
 
-<<<<<<< Updated upstream
-export default Register;
-=======
 export default Login;
->>>>>>> Stashed changes
