@@ -33,6 +33,9 @@
     },
     "updates": {
       "url": "https://u.expo.dev/b7447036-2c97-43cf-a159-0fe8301241a0"
-    }
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ]
   }
 }
