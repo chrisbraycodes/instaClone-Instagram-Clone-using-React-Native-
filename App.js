@@ -17,13 +17,13 @@ import MainScreen from './src/components/Main';
 
 // Firebase configuration
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID",
-  measurementId: "YOUR_MEASUREMENT_ID"
+  apiKey: "AIzaSyDaGRVDsDtFfpOMWjsaN8FHfyq5zPinfcg",
+  authDomain: "instaclone-c9dad.firebaseapp.com",
+  projectId: "instaclone-c9dad",
+  storageBucket: "instaclone-c9dad.appspot.com",
+  messagingSenderId: "199402134756",
+  appId: "1:199402134756:web:26f243025ab738245820f1",
+  measurementId: "G-4E2DFRC3QQ"
 };
 
 // Initialize Firebase if not already initialized
@@ -91,7 +91,11 @@ export class App extends Component {
 
     return (
       <Provider store={store}>
-        <MainScreen />
+        <NavigationContainer>
+          <Stack.Navigator initialRouteName="Main">
+              <Stack.Screen name="Main" component={MainScreen} options={{ headerShown: false }} />
+            </Stack.Navigator>
+        </NavigationContainer>
       </Provider>
     );
   }
