@@ -8,9 +8,9 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import FeedScreen from './main/Feed';
 import ProfileScreen from './main/Profile';
 
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 
-const Tab = createBottomTabNavigator();
+const Tab = createMaterialBottomTabNavigator();
 
 const EmptyScreen = () => null;
 
@@ -22,13 +22,14 @@ export class Main extends Component {
   render() {
     return (
       <Tab.Navigator
-        initialRouteName="Feed"
-        screenOptions={{
-          tabBarStyle: { backgroundColor: 'white' },
-          tabBarActiveTintColor: 'blue',
-          tabBarInactiveTintColor: 'gray',
-        }}
-      >
+      initialRouteName="Feed"
+      labeled={false}
+      barStyle={{
+        backgroundColor: 'blue',
+      }}
+      activeColor="blue" 
+      inactiveColor="lightblue" 
+        >
         <Tab.Screen
           name="Feed"
           component={FeedScreen}
