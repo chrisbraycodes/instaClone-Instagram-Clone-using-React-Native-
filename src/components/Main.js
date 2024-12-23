@@ -6,7 +6,6 @@ import { fetchUser } from '../redux/actions/index';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import FeedScreen from './main/Feed';
-import AddScreen from './main/Add';
 import ProfileScreen from './main/Profile';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -40,7 +39,7 @@ export class Main extends Component {
           }}
         />
         <Tab.Screen
-          name="Add"
+          name="AddContainer"
           component={EmptyScreen}
           listeners={({ navigation }) => ({
             tabPress: (event) => {
