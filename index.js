@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 global.ReadableStream = require('web-streams-polyfill/ponyfill').ReadableStream;
 import { registerRootComponent } from 'expo';
 import App from './App';
