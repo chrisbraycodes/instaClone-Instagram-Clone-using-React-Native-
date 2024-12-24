@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Platform, View, Text } from 'react-native';
 import { initializeApp, getApps, getApp } from 'firebase/app';
-import { getAuth, initializeAuth, browserLocalPersistence, setPersistence, getReactNativePersistence } from 'firebase/auth';
+import {
+  getAuth,
+  initializeAuth,
+  browserLocalPersistence,
+  setPersistence,
+  getReactNativePersistence,
+} from 'firebase/auth';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -14,7 +20,7 @@ import rootReducer from './src/redux/reducers';
 import LandingScreen from './src/components/Auth/Landing';
 import RegisterScreen from './src/components/Auth/Register';
 import LoginScreen from './src/components/Auth/Login';
-import MainScreen from './src/components/Main';
+import MainScreen from './src/components/main/Main';
 
 // Firebase configuration
 const firebaseConfig = {
@@ -24,7 +30,7 @@ const firebaseConfig = {
   storageBucket: "instaclone-c9dad.appspot.com",
   messagingSenderId: "199402134756",
   appId: "1:199402134756:web:26f243025ab738245820f1",
-  measurementId: "G-4E2DFRC3QQ"
+  measurementId: "G-4E2DFRC3QQ",
 };
 
 // Initialize Firebase
@@ -57,6 +63,7 @@ export default function App() {
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
+      console.log('Auth state changed:', user); // Debug auth state
       setLoggedIn(!!user);
       setLoaded(true);
     });
@@ -75,7 +82,11 @@ export default function App() {
     return (
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Landing">
-          <Stack.Screen name="Landing" component={LandingScreen} options={{ headerShown: false }} />
+          <Stack.Screen
+            name="Landing"
+            component={LandingScreen}
+            options={{ headerShown: false }}
+          />
           <Stack.Screen name="Register" component={RegisterScreen} />
           <Stack.Screen name="Login" component={LoginScreen} />
         </Stack.Navigator>
@@ -87,7 +98,11 @@ export default function App() {
     <Provider store={store}>
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Main">
-          <Stack.Screen name="Main" component={MainScreen} options={{ headerShown: false }} />
+          <Stack.Screen
+            name="Main"
+            component={MainScreen}
+            options={{ headerShown: false }}
+          />
           <Stack.Screen name="Add" component={AddScreen} />
         </Stack.Navigator>
       </NavigationContainer>

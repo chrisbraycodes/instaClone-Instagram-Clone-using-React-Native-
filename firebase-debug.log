@@ -1,0 +1,29 @@
+[debug] [2024-12-24T02:37:03.981Z] ----------------------------------------------------------------------
+[debug] [2024-12-24T02:37:03.983Z] Command:       /Users/GoodDogAm/.nvm/versions/node/v18.20.5/bin/node /usr/local/bin/firebase init
+[debug] [2024-12-24T02:37:03.983Z] CLI Version:   13.11.2
+[debug] [2024-12-24T02:37:03.983Z] Platform:      darwin
+[debug] [2024-12-24T02:37:03.983Z] Node Version:  v18.20.5
+[debug] [2024-12-24T02:37:03.985Z] Time:          Mon Dec 23 2024 18:37:03 GMT-0800 (Pacific Standard Time)
+[debug] [2024-12-24T02:37:03.985Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-12-24T02:37:03.989Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-12-24T02:37:03.990Z] > authorizing via signed-in user (write.code9871@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/GoodDogAm/Desktop/instaClone-Instagram-Clone-using-React-Native--main
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  If you want to create a project in a Google Cloud organization or folder, please use "firebase projects:create" instead, and return to this command when you've created the project. 

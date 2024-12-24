@@ -23,19 +23,20 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "extra": {
-      "eas": {
-        "projectId": "b7447036-2c97-43cf-a159-0fe8301241a0"
-      }
-    },
     "runtimeVersion": {
       "policy": "appVersion"
     },
     "updates": {
-      "url": "https://u.expo.dev/b7447036-2c97-43cf-a159-0fe8301241a0"
+      "url": "https://u.expo.dev/1fd6dc3d-9839-4c40-9cd0-76dad04030af"
     },
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "1fd6dc3d-9839-4c40-9cd0-76dad04030af"
+      }
+    },
+    "owner": "cbradio87"
   }
 }
