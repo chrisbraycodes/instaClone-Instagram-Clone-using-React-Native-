@@ -1,37 +1,35 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button } from 'react-native';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth, firestore } from '../config/firebaseConfig'; // Centralized Firebase imports
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const auth = getAuth();
+  const handleLogin = async () => {
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
 
-  const handleLogin = () => {
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        console.log('User logged in:', user);
-      })
-      .catch((error) => {
-        console.error('Error logging in user:', error);
-      });
+      const userDoc = doc(firestore, 'users', user.uid);
+      const docSnapshot = await getDoc(userDoc);
+
+      if (!docSnapshot.exists()) {
+        await setDoc(userDoc, {
+          email: user.email,
+          createdAt: new Date(),
+        });
+      }
+    } catch (error) {
+      console.error('Error logging in user:', error.message);
+    }
   };
 
   return (
     <View>
-      <TextInput
-        placeholder="Email"
-        value={email}
-        onChangeText={(text) => setEmail(text)}
-      />
-      <TextInput
-        placeholder="Password"
-        value={password}
-        onChangeText={(text) => setPassword(text)}
-        secureTextEntry
-      />
+      <TextInput placeholder="Email" value={email} onChangeText={setEmail} />
+      <TextInput placeholder="Password" value={password} onChangeText={setPassword} secureTextEntry />
       <Button title="Login" onPress={handleLogin} />
     </View>
   );

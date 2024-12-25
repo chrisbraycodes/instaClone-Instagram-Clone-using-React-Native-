@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "strict": true,
+    "jsx": "react-native",
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "extends": "expo/tsconfig.base"
+}

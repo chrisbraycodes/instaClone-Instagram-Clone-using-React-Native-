@@ -1,0 +1,6 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project /Users/GoodDogAm/Desktop/instaClone-Instagram-Clone-using-React-Native--main/ios/instaClone.xcodeproj -configuration Debug -scheme instaClone -destination id=9FDC5ECA-5527-4EA6-94A4-07FCB6A33355
+
+User defaults from command line:
+    IDEPackageSupportUseBuiltinSCM = YES
+

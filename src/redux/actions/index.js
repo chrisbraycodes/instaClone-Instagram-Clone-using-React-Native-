@@ -24,7 +24,15 @@ export function fetchUser() {
       const docSnapshot = await getDoc(userDoc);
 
       if (docSnapshot.exists()) {
-        dispatch({ type: USER_STATE_CHANGE, currentUser: docSnapshot.data() });
+        const userData = docSnapshot.data();
+
+        // Convert Firestore timestamp to ISO string if it exists
+        if (userData.createdAt && userData.createdAt.toDate) {
+          userData.createdAt = userData.createdAt.toDate().toISOString();
+        }
+
+        console.log('User fetched:', userData);
+        dispatch({ type: USER_STATE_CHANGE, currentUser: userData });
       } else {
         console.log('User does not exist in Firestore');
       }

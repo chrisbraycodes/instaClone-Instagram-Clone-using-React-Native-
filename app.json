@@ -3,28 +3,47 @@
     "name": "instaClone",
     "slug": "instaClone",
     "version": "1.0.0",
+    "runtimeVersion": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera",
+          "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone",
+          "recordAudioAndroid": true
+        }
+      ]
+    ],
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app requires access to the camera to take photos."
+      },
+      "bundleIdentifier": "com.cbradio87.instaClone",
+      "jsEngine": "jsc"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ],
+      "jsEngine": "jsc"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    },
-    "runtimeVersion": {
-      "policy": "appVersion"
     },
     "updates": {
       "url": "https://u.expo.dev/1fd6dc3d-9839-4c40-9cd0-76dad04030af"

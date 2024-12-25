@@ -1,0 +1,6 @@
+2024-12-25 00:08:25.674 xcodebuild[14457:173148] Writing error result bundle to /var/folders/8m/wfsggzxs2g72z57s3pv7shm40000gn/T/ResultBundle_2024-25-12_00-08-0025.xcresult
+xcodebuild: error: Unable to find a destination matching the provided destination specifier:
+		{ id:9FDC5ECA-5527-4EA6-94A4-07FCB6A33355 }
+
+	Ineligible destinations for the "instaClone" scheme:
+		{ platform:iOS, id:dvtdevice-DVTiPhonePlaceholder-iphoneos:placeholder, name:Any iOS Device, error:iOS 18.2 is not installed. To use with Xcode, first download and install the platform }
