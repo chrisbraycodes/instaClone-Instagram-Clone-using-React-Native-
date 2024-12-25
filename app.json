@@ -40,7 +40,8 @@
         "android.permission.CAMERA",
         "android.permission.RECORD_AUDIO"
       ],
-      "jsEngine": "jsc"
+      "jsEngine": "jsc",
+      "package": "com.cbradio87.instaClone"
     },
     "web": {
       "favicon": "./assets/favicon.png"
